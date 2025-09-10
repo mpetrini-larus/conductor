@@ -78,5 +78,6 @@ include 'kafka-event-queue'
 
 include 'test-harness'
 
-rootProject.children.each {it.name="conductor-${it.name}"}
+rootProject.children.each { it.name = "conductor-${it.name}" }
+
 
