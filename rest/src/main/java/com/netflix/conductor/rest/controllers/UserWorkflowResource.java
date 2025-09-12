@@ -50,7 +50,7 @@ public class UserWorkflowResource {
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody PreferenceRequestDTO request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
-        workflowRequest.setName("AddBookmarkBL");
+        workflowRequest.setName("AddBookmark");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
@@ -68,7 +68,7 @@ public class UserWorkflowResource {
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody PreferenceRequestDTO request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
-        workflowRequest.setName("RemoveBookmarkBL");
+        workflowRequest.setName("RemoveBookmark");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
