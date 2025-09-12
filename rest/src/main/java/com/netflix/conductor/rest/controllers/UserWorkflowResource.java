@@ -45,7 +45,7 @@ public class UserWorkflowResource {
     @Operation(
             summary =
                     "Start a bookmarking flow that allows users to add bookmarks to their dashboard.")
-    public String startAddBookmarkWorkflow(
+    public Map<String, String> startAddBookmarkWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody PreferenceRequestDTO request) {
@@ -56,14 +56,14 @@ public class UserWorkflowResource {
                         "userId", userId,
                         "bookmark", request,
                         "bearer", bearer));
-        return workflowService.startWorkflow(workflowRequest);
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/Preferences/deleteBookmark")
     @Operation(
             summary =
                     "Start a bookmarking flow that allows users to remove bookmarks to their dashboard.")
-    public String startRemoveBookmarkWorkflow(
+    public Map<String, String> startRemoveBookmarkWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody PreferenceRequestDTO request) {
@@ -74,6 +74,6 @@ public class UserWorkflowResource {
                         "userId", userId,
                         "bookmark", request,
                         "bearer", bearer));
-        return workflowService.startWorkflow(workflowRequest);
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 }
