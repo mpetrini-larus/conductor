@@ -17,6 +17,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.*;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
+import com.netflix.conductor.rest.dto.MenuItemRolePermissionDTO;
 import com.netflix.conductor.rest.dto.PreferenceRequestDTO;
 import com.netflix.conductor.service.WorkflowService;
 import com.netflix.conductor.service.WorkflowTestService;
@@ -73,6 +74,24 @@ public class UserWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "bookmark", request,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/MenuItem/UpdateRoles")
+    @Operation(
+            summary =
+                    "Start a flow that allows admins to update menu items role-related permissions.")
+    public Map<String, String> updateMenuItemsRolePermissionWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody MenuItemRolePermissionDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("UpdateMenuRolesPermission");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "menu", request,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
