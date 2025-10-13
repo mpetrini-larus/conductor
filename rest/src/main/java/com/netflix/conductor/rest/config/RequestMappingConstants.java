@@ -24,4 +24,5 @@ public interface RequestMappingConstants {
     String WORKFLOW_BULK = API_PREFIX + "workflow/bulk";
     String WORKFLOW = API_PREFIX + "workflow";
     String USER_MANAGER_WORKFLOW = API_PREFIX + "UserManager";
+    String ACTIVITY_MANAGER_WORKFLOW = API_PREFIX + "ActivityManager";
 }
