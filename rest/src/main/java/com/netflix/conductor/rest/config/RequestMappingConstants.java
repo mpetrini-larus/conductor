@@ -25,4 +25,5 @@ public interface RequestMappingConstants {
     String WORKFLOW = API_PREFIX + "workflow";
     String USER_MANAGER_WORKFLOW = API_PREFIX + "UserManager";
     String ACTIVITY_MANAGER_WORKFLOW = API_PREFIX + "ActivityManager";
+    String CUSTOMER_MANAGER_WORKFLOW = API_PREFIX + "CustomerManager";
 }
