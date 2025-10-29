@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.AccountDTO;
+import com.netflix.conductor.rest.dto.DeleteManyAccountsDTO;
 import com.netflix.conductor.rest.dto.PromoteDTO;
 import com.netflix.conductor.service.WorkflowService;
 
@@ -105,6 +106,24 @@ public class AccountWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "customer", accountId,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/Account/Delete")
+    @Operation(
+            summary =
+                    "Start a delete customers flow that allows users to remove customers account.")
+    public Map<String, String> startDeleteManyAccountWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody DeleteManyAccountsDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteManyCustomer");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "customer", request,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
