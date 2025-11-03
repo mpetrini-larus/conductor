@@ -15,6 +15,7 @@ package com.netflix.conductor.rest.dto;
 import java.time.Instant;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,6 +30,9 @@ public class UpsertActivityRequestDTO {
     private String status;
     private Instant startDate;
     private Instant endDate;
+
+    @JsonProperty("isAllDay")
     private boolean isAllDay;
+
     private List<String> relatedUsers;
 }
