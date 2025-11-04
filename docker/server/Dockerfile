@@ -4,7 +4,8 @@
 # ===========================================================================================================
 # 0. Builder stage 1
 # ===========================================================================================================
-FROM openjdk:17-bullseye AS builder
+# FROM openjdk:17-bullseye AS builder
+FROM eclipse-temurin:17-jdk AS builder
 
 ARG INDEXING_BACKEND=elasticsearch
 
