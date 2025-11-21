@@ -57,7 +57,7 @@ public class ItemWorkflowResource {
     public Map<String, String> startRemoveManyItemsWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @PathVariable("activityId") List<String> itemIds) {
+            @RequestBody List<String> itemIds) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteManyItem");
         workflowRequest.setInput(
