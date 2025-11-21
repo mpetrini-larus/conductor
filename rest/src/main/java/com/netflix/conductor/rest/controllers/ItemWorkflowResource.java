@@ -13,10 +13,11 @@
 package com.netflix.conductor.rest.controllers;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
+import com.netflix.conductor.rest.dto.DeleteManyDTO;
 import com.netflix.conductor.service.WorkflowService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 import java.util.Map;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.ITEM_MANAGER_WORKFLOW;
@@ -57,13 +58,13 @@ public class ItemWorkflowResource {
     public Map<String, String> startRemoveManyItemsWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @RequestBody List<String> itemIds) {
+            @RequestBody DeleteManyDTO dto) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteManyItem");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
-                        "itemIds", itemIds,
+                        "itemIds", dto.getToBeDeleted(),
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.AccountDTO;
-import com.netflix.conductor.rest.dto.DeleteManyAccountsDTO;
+import com.netflix.conductor.rest.dto.DeleteManyDTO;
 import com.netflix.conductor.rest.dto.PromoteDTO;
 import com.netflix.conductor.service.WorkflowService;
 
@@ -117,7 +117,7 @@ public class AccountWorkflowResource {
     public Map<String, String> startDeleteManyAccountWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @RequestBody DeleteManyAccountsDTO request) {
+            @RequestBody DeleteManyDTO request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteManyCustomer");
         workflowRequest.setInput(

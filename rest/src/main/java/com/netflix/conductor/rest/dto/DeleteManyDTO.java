@@ -19,6 +19,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class DeleteManyAccountsDTO {
+public class DeleteManyDTO {
     private List<String> toBeDeleted;
 }
