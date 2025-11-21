@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.MenuItemRolePermissionDTO;
-import com.netflix.conductor.rest.dto.PreferenceRequestDTO;
+import com.netflix.conductor.rest.dto.BookmarkDTO;
 import com.netflix.conductor.service.WorkflowService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -44,7 +44,7 @@ public class UserWorkflowResource {
     public Map<String, String> startAddBookmarkWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @RequestBody PreferenceRequestDTO request) {
+            @RequestBody BookmarkDTO request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("AddBookmark");
         workflowRequest.setInput(
@@ -55,20 +55,20 @@ public class UserWorkflowResource {
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
-    @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/Preferences/deleteBookmark")
+    @DeleteMapping(produces = APPLICATION_JSON_VALUE, path = "/Preferences/deleteBookmark/{bookmarkId}")
     @Operation(
             summary =
                     "Start a bookmarking flow that allows users to remove bookmarks to their dashboard.")
     public Map<String, String> startRemoveBookmarkWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @RequestBody PreferenceRequestDTO request) {
+            @PathVariable("bookmarkId") String bookmarkId) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("RemoveBookmark");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
-                        "bookmark", request,
+                        "bookmark", bookmarkId,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }

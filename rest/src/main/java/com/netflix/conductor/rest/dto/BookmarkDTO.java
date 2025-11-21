@@ -15,9 +15,13 @@ package com.netflix.conductor.rest.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.Map;
+
 @Setter
 @Getter
-public class PreferenceRequestDTO {
-    private String menu;
-    private String locale;
+public class BookmarkDTO {
+    private String menuPath;
+    private Map<String, String> defaultValue;
+    private List<List<String>> templateField;
 }
