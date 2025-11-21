@@ -16,7 +16,7 @@ import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.service.WorkflowService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.List;
 import java.util.Map;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.ITEM_MANAGER_WORKFLOW;
@@ -46,6 +46,24 @@ public class ItemWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "item", itemId,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/Delete")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to remove item to their dashboard.")
+    public Map<String, String> startRemoveManyItemsWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @PathVariable("activityId") List<String> itemIds) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteManyItem");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "itemIds", itemIds,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
