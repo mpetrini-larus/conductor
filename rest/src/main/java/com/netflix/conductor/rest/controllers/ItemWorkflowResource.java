@@ -14,6 +14,7 @@ package com.netflix.conductor.rest.controllers;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.DeleteManyDTO;
+import com.netflix.conductor.rest.dto.ItemMasterDTO;
 import com.netflix.conductor.service.WorkflowService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
@@ -33,20 +34,38 @@ public class ItemWorkflowResource {
         this.workflowService = workflowService;
     }
 
-    @DeleteMapping(produces = APPLICATION_JSON_VALUE, path = "/{itemId}")
+    @PostMapping(produces = APPLICATION_JSON_VALUE)
     @Operation(
             summary =
-                    "Start a flow that allows users to remove item to their dashboard.")
-    public Map<String, String> startRemoveItemWorkflow(
+                    "Start a flow that allows users to add item to their dashboard.")
+    public Map<String, String> startAddItemWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @PathVariable("activityId") String itemId) {
+            @PathVariable("item") ItemMasterDTO item) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
-        workflowRequest.setName("DeleteItem");
+        workflowRequest.setName("AddItem");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
-                        "item", itemId,
+                        "item", item,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE)
+    @Operation(
+            summary =
+                    "Start a flow that allows users to add item to their dashboard.")
+    public Map<String, String> startUpdateItemWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @PathVariable("item") ItemMasterDTO item) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("UpdateItem");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "item", item,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
