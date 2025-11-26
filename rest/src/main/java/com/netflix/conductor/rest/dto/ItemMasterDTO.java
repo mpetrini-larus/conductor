@@ -19,19 +19,19 @@ import lombok.Setter;
 @Getter
 public class ItemMasterDTO {
     private String id;
-    public String Code;
-    public String Description;
-    public String ManufacturerItemCode;
-    public String Alias;
-    public String StatusId;
-    public String UomId;
-    public String TypeId;
-    public String BrandId;
-    public String LineId;
-    public String CategoryId;
-    public String SubCategoryId;
-    public String Note;
+    private String Code;
+    private String Description;
+    private String ManufacturerItemCode;
+    private String Alias;
+    private String StatusId;
+    private String UomId;
+    private String TypeId;
+    private String BrandId;
+    private String LineId;
+    private String CategoryId;
+    private String SubCategoryId;
+    private String Note;
     // public required JsonDocument? Fields { get; set; } = JsonDocument.Parse("{}");
-    public boolean IsBlocked;
-    public boolean IsDeleted;
+    private boolean IsBlocked;
+    private boolean IsDeleted;
 }
