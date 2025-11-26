@@ -41,7 +41,7 @@ public class ItemWorkflowResource {
     public Map<String, String> startAddItemWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @PathVariable("item") ItemMasterDTO item) {
+            @RequestBody ItemMasterDTO item) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("AddItem");
         workflowRequest.setInput(
@@ -59,7 +59,7 @@ public class ItemWorkflowResource {
     public Map<String, String> startUpdateItemWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @PathVariable("item") ItemMasterDTO item) {
+            @RequestBody ItemMasterDTO item) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("UpdateItem");
         workflowRequest.setInput(
