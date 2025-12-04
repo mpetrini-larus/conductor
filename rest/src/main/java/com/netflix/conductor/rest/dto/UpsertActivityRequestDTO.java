@@ -26,8 +26,8 @@ public class UpsertActivityRequestDTO {
     private String object;
     private String body;
     private String note;
-    private String type;
-    private String status;
+    private String typeId;
+    private String statusId;
     private Instant startDate;
     private Instant endDate;
 
