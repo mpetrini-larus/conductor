@@ -16,7 +16,10 @@ import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.SalesQuoteHeaderDTO;
 import com.netflix.conductor.rest.dto.SalesQuoteLineDTO;
 import com.netflix.conductor.rest.dto.DeleteManyDTO;
+import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
 import com.netflix.conductor.service.WorkflowService;
+import com.oracle.graal.python.pegparser.sst.StmtTy.Global;
+
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
@@ -185,6 +188,42 @@ public class SalesQuoteWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "salesQuoteLineIds", dto.getToBeDeleted(),
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders/DeleteWithFilters")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to remove many sales quote headers to their dashboard.")
+    public Map<String, String> startRemoveManySalesQuoteHeadersWithFiltersWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody GlobalRequestModelDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteManySalesQuoteHeadersWithFilters");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "request", request,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteLines/DeleteWithFilters")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to remove many sales quote lines to their dashboard.")
+    public Map<String, String> startRemoveManySalesQuoteLinesWithFiltersWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody GlobalRequestModelDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteManySalesQuoteHeadersWithFiltersPalette");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "request", request,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
