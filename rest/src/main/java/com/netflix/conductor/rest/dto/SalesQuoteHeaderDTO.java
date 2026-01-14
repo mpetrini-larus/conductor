@@ -1,6 +1,7 @@
 package com.netflix.conductor.rest.dto;
 
 import java.util.HashSet;
+
 import java.time.Instant;
 
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class SalesQuoteHeaderDTO {
     private String BillToAddressId ; //Attualmente uguale a ShipToAddressId (mettendo il cliente) // obbligatorio
     private String ShipToAddressId ; //Attualmente uguale a BillToAddressId (mettendo il cliente) // obbligatorio
     private String ShipToAddress ;
-    private HashSet<ContactDTO>  Contacts ; // Id di contatti, combo multipla
+    private HashSet<String>  Contacts ; // Id di contatti, combo multipla
     private String YourReference ;
     private String OurReference ;
     private String PaymentTermId ;
@@ -32,7 +33,7 @@ public class SalesQuoteHeaderDTO {
     private String TranspoortMethodId ;
     private Instant  DueDate ;
     private Instant  ExpirationDate ; // data scadenza offerta // obbligatorio
-    private HashSet<AccountDTO>  SalesPeople ;
+    private HashSet<String>  SalesPeople ;
     private String PriceListId ;
     private String CurrencyId ;
     private float  CurrencyFactor ;
