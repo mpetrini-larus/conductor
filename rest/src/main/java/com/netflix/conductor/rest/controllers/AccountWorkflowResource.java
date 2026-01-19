@@ -138,7 +138,7 @@ public class AccountWorkflowResource {
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody GlobalRequestModelDTO request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
-        workflowRequest.setName("DeleteManyCustomer");
+        workflowRequest.setName("DeleteCustomersWithFilters");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
