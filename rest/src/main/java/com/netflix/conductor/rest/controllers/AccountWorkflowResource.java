@@ -14,6 +14,7 @@ package com.netflix.conductor.rest.controllers;
 
 import java.util.Map;
 
+import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
 import org.springframework.web.bind.annotation.*;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
@@ -124,6 +125,24 @@ public class AccountWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "customer", request,
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/Account/DeleteWithFilters")
+    @Operation(
+            summary =
+                    "Start a delete customers flow that allows users to remove customers account.")
+    public Map<String, String> startDeleteAccountWithFiltersWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody GlobalRequestModelDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteManyCustomer");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "filter", request,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }

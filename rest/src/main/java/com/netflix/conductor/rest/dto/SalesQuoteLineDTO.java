@@ -1,6 +1,5 @@
 package com.netflix.conductor.rest.dto;
 
-import java.util.HashSet;
 import java.util.Map;
 import java.time.Instant;
 
