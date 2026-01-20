@@ -22,7 +22,7 @@ public class GlobalRequestModelDTO {
 
     private int pageNumber;
     private int pageSize;
-    private String desc;
+    private Boolean desc;
     private String orderBy;
     private FilterGroupDTO filterGroup;
     

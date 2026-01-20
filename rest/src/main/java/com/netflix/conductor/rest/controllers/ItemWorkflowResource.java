@@ -14,6 +14,7 @@ package com.netflix.conductor.rest.controllers;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.DeleteManyDTO;
+import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
 import com.netflix.conductor.rest.dto.ItemMasterDTO;
 import com.netflix.conductor.service.WorkflowService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -84,6 +85,24 @@ public class ItemWorkflowResource {
                 Map.of(
                         "userId", userId,
                         "itemIds", dto.getToBeDeleted(),
+                        "bearer", bearer));
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/DeleteWithFilters")
+    @Operation(
+            summary =
+                    "Start a delete items flow that allows users to remove items.")
+    public Map<String, String> startDeleteAccountWithFiltersWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody GlobalRequestModelDTO request) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("DeleteItemsWithFilters");
+        workflowRequest.setInput(
+                Map.of(
+                        "userId", userId,
+                        "filter", request,
                         "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
