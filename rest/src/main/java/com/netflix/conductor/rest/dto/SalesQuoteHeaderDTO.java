@@ -29,7 +29,7 @@ public class SalesQuoteHeaderDTO {
     private String OurReference ;
     private String PaymentTermId ;
     private String ShipmentMethodId ;
-    private String TransportMethodId ;
+    private String TranspoortMethodId ;
     private Instant DueDate ;
     private Instant ExpirationDate ;
     private HashSet<ContactDTO> SalesPeople ;
