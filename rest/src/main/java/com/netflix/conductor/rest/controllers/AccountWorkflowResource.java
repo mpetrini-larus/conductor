@@ -111,7 +111,7 @@ public class AccountWorkflowResource {
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
-    @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/Account/Delete")
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/Account/Delete")
     @Operation(
             summary =
                     "Start a delete customers flow that allows users to remove customers account.")
