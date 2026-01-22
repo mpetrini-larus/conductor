@@ -17,6 +17,7 @@ import com.netflix.conductor.rest.dto.SalesQuoteHeaderDTO;
 import com.netflix.conductor.rest.dto.SalesQuoteLineDTO;
 import com.netflix.conductor.rest.dto.DeleteManyDTO;
 import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
+import com.netflix.conductor.rest.dto.PromoteSalesQuoteStageDTO;
 import com.netflix.conductor.service.WorkflowService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -74,7 +75,26 @@ public class SalesQuoteWorkflowResource {
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
-    
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Promote")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to promote a sales quote header.")
+    public Map<String, String> startPromoteSalesQuoteStageWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @RequestBody PromoteSalesQuoteStageDTO promote) {
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("PromoteSalesQuoteHeader");
+        workflowRequest.setInput(
+            Map.of(
+                "promote", promote,
+                "userId", userId,
+                "bearer", bearer
+            )
+        );
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders")
     @Operation(
             summary =
