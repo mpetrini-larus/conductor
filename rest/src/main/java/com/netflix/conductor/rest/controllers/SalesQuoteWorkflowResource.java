@@ -35,6 +35,7 @@ public class SalesQuoteWorkflowResource {
     public SalesQuoteWorkflowResource(WorkflowService workflowService) {
         this.workflowService = workflowService;
     }
+
     @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders")
     @Operation(
             summary =

@@ -18,7 +18,7 @@ public class SalesQuoteLineDTO {
     private String UomId;
     private float Quantity;
     private float Price;
-    private Map<String, Object> Discounts;
+    private Object Discounts;
     private float TotalAmount;
     private float OutstandingAmount;
     private float OutstandingQty;
