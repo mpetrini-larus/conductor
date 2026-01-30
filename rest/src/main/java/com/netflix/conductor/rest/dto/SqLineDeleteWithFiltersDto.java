@@ -20,6 +20,6 @@ import lombok.Setter;
 @Getter
 public class SqLineDeleteWithFiltersDto extends GlobalRequestModelDTO {
 
-    private String SqHeaderId;
+    private String sqHeaderId;
     
 }
