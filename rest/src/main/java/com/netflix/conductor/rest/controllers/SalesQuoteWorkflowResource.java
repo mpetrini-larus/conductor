@@ -13,11 +13,7 @@
 package com.netflix.conductor.rest.controllers;
 
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
-import com.netflix.conductor.rest.dto.SalesQuoteHeaderDTO;
-import com.netflix.conductor.rest.dto.SalesQuoteLineDTO;
-import com.netflix.conductor.rest.dto.DeleteManyDTO;
-import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
-import com.netflix.conductor.rest.dto.PromoteSalesQuoteStageDTO;
+import com.netflix.conductor.rest.dto.*;
 import com.netflix.conductor.service.WorkflowService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -237,7 +233,7 @@ public class SalesQuoteWorkflowResource {
     public Map<String, String> startRemoveManySalesQuoteLinesWithFiltersWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
-            @RequestBody GlobalRequestModelDTO request) {
+            @RequestBody SqLineDeleteWithFiltersDto request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteManySalesQuoteHeadersWithFiltersPalette");
         workflowRequest.setInput(
