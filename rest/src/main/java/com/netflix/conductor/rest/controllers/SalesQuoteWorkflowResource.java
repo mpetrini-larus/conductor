@@ -235,7 +235,7 @@ public class SalesQuoteWorkflowResource {
             @RequestHeader(value = "X-User-Id") String userId,
             @RequestBody SqLineDeleteWithFiltersDto request) {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
-        workflowRequest.setName("DeleteManySalesQuoteHeadersWithFiltersPalette");
+        workflowRequest.setName("DeleteManySalesQuoteLinesWithFilters");
         workflowRequest.setInput(
                 Map.of(
                         "userId", userId,
