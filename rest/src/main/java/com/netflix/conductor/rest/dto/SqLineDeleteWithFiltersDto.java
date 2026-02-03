@@ -18,8 +18,13 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class SqLineDeleteWithFiltersDto extends GlobalRequestModelDTO {
+public class SqLineDeleteWithFiltersDto {
 
-    private String SqHeaderId;
+    private int pageNumber;
+    private int pageSize;
+    private Boolean desc;
+    private String orderBy;
+    private FilterGroupDTO filterGroup;
+    private String sqHeaderId;
     
 }
