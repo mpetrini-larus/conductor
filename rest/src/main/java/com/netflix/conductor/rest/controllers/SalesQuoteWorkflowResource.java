@@ -92,6 +92,53 @@ public class SalesQuoteWorkflowResource {
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Accept/{sqId}")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to accept a sales quote header.")
+    public Map<String, String> startAcceptSalesQuoteStageWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @PathVariable("sqId") String sqId) {
+        PromoteSalesQuoteStageDTO promote = new PromoteSalesQuoteStageDTO();
+        promote.setPromoteReject(true);
+        promote.setSaleQuote(sqId);
+
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("PromoteSalesQuoteHeader");
+        workflowRequest.setInput(
+                Map.of(
+                        "promote", promote,
+                        "userId", userId,
+                        "bearer", bearer
+                )
+        );
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+    @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Reject/{sqId}")
+    @Operation(
+            summary =
+                    "Start a flow that allows users to reject a sales quote header.")
+    public Map<String, String> startRejectSalesQuoteStageWorkflow(
+            @RequestHeader(value = "Authorization") String bearer,
+            @RequestHeader(value = "X-User-Id") String userId,
+            @PathVariable("sqId") String sqId) {
+        PromoteSalesQuoteStageDTO promote = new PromoteSalesQuoteStageDTO();
+        promote.setSaleQuote(sqId);
+        promote.setPromoteReject(false);
+
+        StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
+        workflowRequest.setName("PromoteSalesQuoteHeader");
+        workflowRequest.setInput(
+                Map.of(
+                        "promote", promote,
+                        "userId", userId,
+                        "bearer", bearer
+                )
+        );
+        return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
+    }
+
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders")
     @Operation(
             summary =

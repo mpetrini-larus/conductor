@@ -22,4 +22,5 @@ public class PromoteSalesQuoteStageDTO {
     private String newCode;
     private String newProgressive;
     private String promotedToStageId;
+    private Boolean promoteReject;
 }
