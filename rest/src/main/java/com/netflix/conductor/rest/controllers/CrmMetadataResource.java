@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.CRM_WORKFLOW_METADATA;
 
@@ -50,46 +52,42 @@ public class CrmMetadataResource {
 
     @Operation(summary = "Returns latest versions workflow names and descriptions only (no definition bodies)")
     @GetMapping("/workflow")
-    public Map<String, WorkflowSummaryDTO> getWorkflowNamesAndVersions() {
-        Map<String, WorkflowSummaryDTO> outcome = new HashMap<>();
-        metadataService.getWorkflowDefsLatestVersions()
+    public Set<WorkflowSummaryDTO> getWorkflowNamesAndVersions() {
+        return metadataService.getWorkflowDefsLatestVersions()
                 .stream()
                 .filter(wfdef -> {
                     var metadata = wfdef.getMetadata();
                     return metadata.containsKey("type") &&
                             StringUtils.equalsIgnoreCase(metadata.get("type").toString(),"BUSINESS_LOGIC");
                 })
-                .forEach(wf -> {
+                .map(wf -> {
                     var wfSummary = new WorkflowSummaryDTO();
                     wfSummary.setName(wf.getName());
                     wfSummary.setDescription(wf.getDescription());
                     wfSummary.setVersion(wf.getVersion());
                     wfSummary.setCreateTime(wfSummary.getCreateTime());
-                    outcome.put(wf.getName(),wfSummary);
-                });
-        return outcome;
+                    return wfSummary;
+                }).collect(Collectors.toSet());
     }
 
     @Operation(summary = "Returns latest versions of available workflow palette, name and descriptions only (no definition bodies)")
     @GetMapping("/workflow/palette")
-    public Map<String, WorkflowSummaryDTO> getWorkflowPaletteNamesAndVersions() {
-        Map<String, WorkflowSummaryDTO> outcome = new HashMap<>();
-        metadataService.getWorkflowDefsLatestVersions()
+    public Set<WorkflowSummaryDTO> getWorkflowPaletteNamesAndVersions() {
+        return  metadataService.getWorkflowDefsLatestVersions()
                 .stream()
                 .filter(wfdef -> {
                     var metadata = wfdef.getMetadata();
                     return metadata.containsKey("type") &&
                             StringUtils.equalsIgnoreCase(metadata.get("type").toString(),"PALETTE");
                 })
-                .forEach(wf -> {
+                .map(wf -> {
                     var wfSummary = new WorkflowSummaryDTO();
                     wfSummary.setName(wf.getName());
                     wfSummary.setDescription(wf.getDescription());
                     wfSummary.setVersion(wf.getVersion());
                     wfSummary.setCreateTime(wfSummary.getCreateTime());
-                    outcome.put(wf.getName(),wfSummary);
-                });
-        return outcome;
+                    return wfSummary;
+                }).collect(Collectors.toSet());
     }
 
 }
