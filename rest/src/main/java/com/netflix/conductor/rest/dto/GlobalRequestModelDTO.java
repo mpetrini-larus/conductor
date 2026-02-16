@@ -16,14 +16,16 @@ package com.netflix.conductor.rest.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.Map;
+
 @Setter
 @Getter
 public class GlobalRequestModelDTO {
 
     private int pageNumber;
     private int pageSize;
-    private Boolean desc;
-    private String orderBy;
+    private List<Map<String, Object>> orderBy;
     private FilterGroupDTO filterGroup;
     
 }
