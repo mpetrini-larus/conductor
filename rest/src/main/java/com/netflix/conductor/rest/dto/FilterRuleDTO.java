@@ -12,7 +12,6 @@
  */
 package com.netflix.conductor.rest.dto;
 
-
 import lombok.Getter;
 import lombok.Setter;
 

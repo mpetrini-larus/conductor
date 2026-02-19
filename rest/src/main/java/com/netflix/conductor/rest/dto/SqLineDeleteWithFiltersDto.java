@@ -12,7 +12,6 @@
  */
 package com.netflix.conductor.rest.dto;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,5 +25,4 @@ public class SqLineDeleteWithFiltersDto {
     private String orderBy;
     private FilterGroupDTO filterGroup;
     private String sqHeaderId;
-    
 }

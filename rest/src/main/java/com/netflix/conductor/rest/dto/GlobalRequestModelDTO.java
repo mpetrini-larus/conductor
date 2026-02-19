@@ -12,12 +12,11 @@
  */
 package com.netflix.conductor.rest.dto;
 
+import java.util.List;
+import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
-import java.util.Map;
 
 @Setter
 @Getter
@@ -27,5 +26,4 @@ public class GlobalRequestModelDTO {
     private int pageSize;
     private List<Map<String, Object>> orderBy;
     private FilterGroupDTO filterGroup;
-    
 }

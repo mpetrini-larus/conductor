@@ -12,15 +12,18 @@
  */
 package com.netflix.conductor.rest.controllers;
 
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.*;
+
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.*;
 import com.netflix.conductor.service.WorkflowService;
 
 import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.*;
-import java.util.Map;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.SALES_QUOTE_MANAGER_WORKFLOW;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -33,9 +36,7 @@ public class SalesQuoteWorkflowResource {
     }
 
     @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to create a sales quote header.")
+    @Operation(summary = "Start a flow that allows users to create a sales quote header.")
     public Map<String, String> startCreateSalesQuoteHeaderWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -43,19 +44,15 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("AddSalesQuoteHeader");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteHeader", salesQuoteHeader,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteHeader", salesQuoteHeader,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PostMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteLines")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to create a sales quote line.")
+    @Operation(summary = "Start a flow that allows users to create a sales quote line.")
     public Map<String, String> startCreateSalesQuoteLineWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -63,19 +60,15 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("AddSalesQuoteLine");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteLine", salesQuoteLine,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteLine", salesQuoteLine,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Promote")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to promote a sales quote header.")
+    @Operation(summary = "Start a flow that allows users to promote a sales quote header.")
     public Map<String, String> startPromoteSalesQuoteStageWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -83,19 +76,15 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("PromoteSalesQuoteHeader");
         workflowRequest.setInput(
-            Map.of(
-                "promote", promote,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "promote", promote,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Accept/{sqId}")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to accept a sales quote header.")
+    @Operation(summary = "Start a flow that allows users to accept a sales quote header.")
     public Map<String, String> startAcceptSalesQuoteStageWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -110,15 +99,12 @@ public class SalesQuoteWorkflowResource {
                 Map.of(
                         "promote", promote,
                         "userId", userId,
-                        "bearer", bearer
-                )
-        );
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
+
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "SalesQuoteHeaders/Reject/{sqId}")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to reject a sales quote header.")
+    @Operation(summary = "Start a flow that allows users to reject a sales quote header.")
     public Map<String, String> startRejectSalesQuoteStageWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -133,16 +119,12 @@ public class SalesQuoteWorkflowResource {
                 Map.of(
                         "promote", promote,
                         "userId", userId,
-                        "bearer", bearer
-                )
-        );
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to update a sales quote header.")
+    @Operation(summary = "Start a flow that allows users to update a sales quote header.")
     public Map<String, String> startUpdateSalesQuoteHeaderWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -150,19 +132,15 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("UpdateSalesQuoteHeader");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteHeader", salesQuoteHeader,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteHeader", salesQuoteHeader,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteLines")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to update a sales quote line.")
+    @Operation(summary = "Start a flow that allows users to update a sales quote line.")
     public Map<String, String> startUpdateSalesQuoteLineWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -170,19 +148,17 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("UpdateSalesQuoteLine");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteLine", salesQuoteLine,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteLine", salesQuoteLine,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
-    @DeleteMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteHeaders/{salesQuoteHeaderId}")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to delete a sales quote header.")
+    @DeleteMapping(
+            produces = APPLICATION_JSON_VALUE,
+            path = "/SalesQuoteHeaders/{salesQuoteHeaderId}")
+    @Operation(summary = "Start a flow that allows users to delete a sales quote header.")
     public Map<String, String> startDeleteSalesQuoteHeaderWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -190,19 +166,15 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteSalesQuoteHeader");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteHeaderId", salesQuoteHeaderId,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteHeaderId", salesQuoteHeaderId,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 
     @DeleteMapping(produces = APPLICATION_JSON_VALUE, path = "/SalesQuoteLines/{salesQuoteLineId}")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to delete a sales quote line.")
+    @Operation(summary = "Start a flow that allows users to delete a sales quote line.")
     public Map<String, String> startDeleteSalesQuoteLineWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -210,12 +182,10 @@ public class SalesQuoteWorkflowResource {
         StartWorkflowRequest workflowRequest = new StartWorkflowRequest();
         workflowRequest.setName("DeleteSalesQuoteLine");
         workflowRequest.setInput(
-            Map.of(
-                "salesQuoteLineId", salesQuoteLineId,
-                "userId", userId,
-                "bearer", bearer
-            )
-        );
+                Map.of(
+                        "salesQuoteLineId", salesQuoteLineId,
+                        "userId", userId,
+                        "bearer", bearer));
         return Map.of("operationId", workflowService.startWorkflow(workflowRequest));
     }
 

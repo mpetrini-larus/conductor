@@ -12,17 +12,20 @@
  */
 package com.netflix.conductor.rest.controllers;
 
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.*;
+
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import com.netflix.conductor.rest.dto.DeleteManyDTO;
 import com.netflix.conductor.rest.dto.GlobalRequestModelDTO;
 import com.netflix.conductor.rest.dto.ItemMasterDTO;
 import com.netflix.conductor.service.WorkflowService;
-import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import io.swagger.v3.oas.annotations.Operation;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.ITEM_MANAGER_WORKFLOW;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -36,9 +39,7 @@ public class ItemWorkflowResource {
     }
 
     @PostMapping(produces = APPLICATION_JSON_VALUE)
-    @Operation(
-            summary =
-                    "Start a flow that allows users to add item to their dashboard.")
+    @Operation(summary = "Start a flow that allows users to add item to their dashboard.")
     public Map<String, String> startAddItemWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -54,9 +55,7 @@ public class ItemWorkflowResource {
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE)
-    @Operation(
-            summary =
-                    "Start a flow that allows users to add item to their dashboard.")
+    @Operation(summary = "Start a flow that allows users to add item to their dashboard.")
     public Map<String, String> startUpdateItemWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -72,9 +71,7 @@ public class ItemWorkflowResource {
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/Delete")
-    @Operation(
-            summary =
-                    "Start a flow that allows users to remove item to their dashboard.")
+    @Operation(summary = "Start a flow that allows users to remove item to their dashboard.")
     public Map<String, String> startRemoveManyItemsWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
@@ -90,9 +87,7 @@ public class ItemWorkflowResource {
     }
 
     @PutMapping(produces = APPLICATION_JSON_VALUE, path = "/DeleteWithFilters")
-    @Operation(
-            summary =
-                    "Start a delete items flow that allows users to remove items.")
+    @Operation(summary = "Start a delete items flow that allows users to remove items.")
     public Map<String, String> startDeleteAccountWithFiltersWorkflow(
             @RequestHeader(value = "Authorization") String bearer,
             @RequestHeader(value = "X-User-Id") String userId,
