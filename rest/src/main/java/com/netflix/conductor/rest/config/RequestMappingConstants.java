@@ -23,10 +23,5 @@ public interface RequestMappingConstants {
     String TASKS = API_PREFIX + "tasks";
     String WORKFLOW_BULK = API_PREFIX + "workflow/bulk";
     String WORKFLOW = API_PREFIX + "workflow";
-    String USER_MANAGER_WORKFLOW = API_PREFIX + "UserManager";
-    String ACTIVITY_MANAGER_WORKFLOW = API_PREFIX + "ActivityManager";
-    String CUSTOMER_MANAGER_WORKFLOW = API_PREFIX + "CustomerManager";
-    String ITEM_MANAGER_WORKFLOW = API_PREFIX + "ItemManager";
-    String SALES_QUOTE_MANAGER_WORKFLOW = API_PREFIX + "SalesQuoteManager";
     String CRM_WORKFLOW_METADATA = API_PREFIX + "Workflow/Metadata/Crm";
 }
