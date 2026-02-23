@@ -13,11 +13,9 @@
 package com.netflix.conductor.rest.dto;
 
 import com.netflix.conductor.common.metadata.workflow.WorkflowDefSummary;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Map;
 
 @Setter
 @Getter

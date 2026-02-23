@@ -12,16 +12,18 @@
  */
 package com.netflix.conductor.rest.controllers;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.*;
+
 import com.netflix.conductor.common.metadata.workflow.WorkflowDef;
 import com.netflix.conductor.core.exception.NotFoundException;
 import com.netflix.conductor.rest.dto.WorkflowSummaryDTO;
 import com.netflix.conductor.service.MetadataService;
-import io.swagger.v3.oas.annotations.Operation;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import io.swagger.v3.oas.annotations.Operation;
 
 import static com.netflix.conductor.rest.config.RequestMappingConstants.CRM_WORKFLOW_METADATA;
 
@@ -42,50 +44,64 @@ public class CrmMetadataResource {
             @RequestParam(value = "version", required = false) Integer version) {
         var outcome = metadataService.getWorkflowDef(name, version);
         var metadata = outcome.getMetadata();
-        boolean crmCheck = metadata.containsKey("type") &&
-                (StringUtils.equalsAnyIgnoreCase(metadata.get("type").toString(), "BUSINESS_LOGIC", "PALETTE"));
-        if(!crmCheck) {throw new NotFoundException("No such workflow found by name: %s, version: %d", name, version);}
+        boolean crmCheck =
+                metadata.containsKey("type")
+                        && (StringUtils.equalsAnyIgnoreCase(
+                                metadata.get("type").toString(), "BUSINESS_LOGIC", "PALETTE"));
+        if (!crmCheck) {
+            throw new NotFoundException(
+                    "No such workflow found by name: %s, version: %d", name, version);
+        }
         return outcome;
     }
 
-    @Operation(summary = "Returns latest versions workflow names and descriptions only (no definition bodies)")
+    @Operation(
+            summary =
+                    "Returns latest versions workflow names and descriptions only (no definition bodies)")
     @GetMapping("/workflow")
     public Set<WorkflowSummaryDTO> getWorkflowNamesAndVersions() {
-        return metadataService.getWorkflowDefsLatestVersions()
-                .stream()
-                .filter(wfdef -> {
-                    var metadata = wfdef.getMetadata();
-                    return metadata.containsKey("type") &&
-                            StringUtils.equalsIgnoreCase(metadata.get("type").toString(),"BUSINESS_LOGIC");
-                })
-                .map(wf -> {
-                    var wfSummary = new WorkflowSummaryDTO();
-                    wfSummary.setName(wf.getName());
-                    wfSummary.setDescription(wf.getDescription());
-                    wfSummary.setVersion(wf.getVersion());
-                    wfSummary.setCreateTime(wfSummary.getCreateTime());
-                    return wfSummary;
-                }).collect(Collectors.toSet());
+        return metadataService.getWorkflowDefsLatestVersions().stream()
+                .filter(
+                        wfdef -> {
+                            var metadata = wfdef.getMetadata();
+                            return metadata.containsKey("type")
+                                    && StringUtils.equalsIgnoreCase(
+                                            metadata.get("type").toString(), "BUSINESS_LOGIC");
+                        })
+                .map(
+                        wf -> {
+                            var wfSummary = new WorkflowSummaryDTO();
+                            wfSummary.setName(wf.getName());
+                            wfSummary.setDescription(wf.getDescription());
+                            wfSummary.setVersion(wf.getVersion());
+                            wfSummary.setCreateTime(wfSummary.getCreateTime());
+                            return wfSummary;
+                        })
+                .collect(Collectors.toSet());
     }
 
-    @Operation(summary = "Returns latest versions of available workflow palette, name and descriptions only (no definition bodies)")
+    @Operation(
+            summary =
+                    "Returns latest versions of available workflow palette, name and descriptions only (no definition bodies)")
     @GetMapping("/workflow/palette")
     public Set<WorkflowSummaryDTO> getWorkflowPaletteNamesAndVersions() {
-        return  metadataService.getWorkflowDefsLatestVersions()
-                .stream()
-                .filter(wfdef -> {
-                    var metadata = wfdef.getMetadata();
-                    return metadata.containsKey("type") &&
-                            StringUtils.equalsIgnoreCase(metadata.get("type").toString(),"PALETTE");
-                })
-                .map(wf -> {
-                    var wfSummary = new WorkflowSummaryDTO();
-                    wfSummary.setName(wf.getName());
-                    wfSummary.setDescription(wf.getDescription());
-                    wfSummary.setVersion(wf.getVersion());
-                    wfSummary.setCreateTime(wfSummary.getCreateTime());
-                    return wfSummary;
-                }).collect(Collectors.toSet());
+        return metadataService.getWorkflowDefsLatestVersions().stream()
+                .filter(
+                        wfdef -> {
+                            var metadata = wfdef.getMetadata();
+                            return metadata.containsKey("type")
+                                    && StringUtils.equalsIgnoreCase(
+                                            metadata.get("type").toString(), "PALETTE");
+                        })
+                .map(
+                        wf -> {
+                            var wfSummary = new WorkflowSummaryDTO();
+                            wfSummary.setName(wf.getName());
+                            wfSummary.setDescription(wf.getDescription());
+                            wfSummary.setVersion(wf.getVersion());
+                            wfSummary.setCreateTime(wfSummary.getCreateTime());
+                            return wfSummary;
+                        })
+                .collect(Collectors.toSet());
     }
-
 }

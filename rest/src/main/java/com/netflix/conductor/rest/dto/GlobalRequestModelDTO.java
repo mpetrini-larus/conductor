@@ -12,6 +12,8 @@
  */
 package com.netflix.conductor.rest.dto;
 
+import java.util.List;
+import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,8 +24,6 @@ public class GlobalRequestModelDTO {
 
     private int pageNumber;
     private int pageSize;
-    private Boolean desc;
-    private String orderBy;
+    private List<Map<String, Object>> orderBy;
     private FilterGroupDTO filterGroup;
-    
 }

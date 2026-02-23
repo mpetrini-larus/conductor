@@ -1,7 +1,19 @@
+/*
+ * Copyright 2026 Conductor Authors.
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ */
 package com.netflix.conductor.rest.dto;
 
-import java.util.HashSet;
 import java.time.Instant;
+import java.util.HashSet;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,35 +21,39 @@ import lombok.Setter;
 @Setter
 @Getter
 public class SalesQuoteHeaderDTO {
-    private String Id ;// obbligatorio
-    private String TenantId ;// obbligatorio
-    private String CompanyId ;// obbligatorio
-    private String TypeId ; // obbligatorio
-    private String StageId ;// obbligatorio
-    private String OwnerUserId ;// obbligatorio
-    private int QuoteNumber ;// obbligatorio
-    private String QuoteCode ;// obbligatorio
-    private Instant QuoteDate ;// obbligatorio
-    private String QuoteObject ;
-    private String BillToAccountId ; //Attualmente uguale a ShipToAccountId (mettendo il cliente) // obbligatorio
-    private String ShipToAccountId ; //Attualmente uguale a BillToAccountId (mettendo il cliente) // obbligatorio
-    private String BillToAddressId ; //Attualmente uguale a ShipToAddressId (mettendo il cliente) // obbligatorio
-    private String ShipToAddressId ; //Attualmente uguale a BillToAddressId (mettendo il cliente) // obbligatorio
-    private String ShipToAddress ;
-    private HashSet<ContactDTO> Contacts ;
-    private String YourReference ;
-    private String OurReference ;
-    private String PaymentTermId ;
-    private String ShipmentMethodId ;
-    private String TranspoortMethodId ;
-    private Instant DueDate ;
-    private Instant ExpirationDate ;
-    private HashSet<ContactDTO> SalesPeople ;
-    private String PriceListId ;
-    private String CurrencyId ;
-    private float  CurrencyFactor ;
-    private String LocationId ;
-    private boolean IsFromExternalSystem ;
-    private String ExternalSystemId ;
-    private boolean IsDeleted ;
+    private String Id; // obbligatorio
+    private String TenantId; // obbligatorio
+    private String CompanyId; // obbligatorio
+    private String TypeId; // obbligatorio
+    private String StageId; // obbligatorio
+    private String OwnerUserId; // obbligatorio
+    private int QuoteNumber; // obbligatorio
+    private String QuoteCode; // obbligatorio
+    private Instant QuoteDate; // obbligatorio
+    private String QuoteObject;
+    private String BillToAccountId; // Attualmente uguale a ShipToAccountId (mettendo il cliente) //
+    // obbligatorio
+    private String ShipToAccountId; // Attualmente uguale a BillToAccountId (mettendo il cliente) //
+    // obbligatorio
+    private String BillToAddressId; // Attualmente uguale a ShipToAddressId (mettendo il cliente) //
+    // obbligatorio
+    private String ShipToAddressId; // Attualmente uguale a BillToAddressId (mettendo il cliente) //
+    // obbligatorio
+    private String ShipToAddress;
+    private HashSet<ContactDTO> Contacts;
+    private String YourReference;
+    private String OurReference;
+    private String PaymentTermId;
+    private String ShipmentMethodId;
+    private String TranspoortMethodId;
+    private Instant DueDate;
+    private Instant ExpirationDate;
+    private HashSet<ContactDTO> SalesPeople;
+    private String PriceListId;
+    private String CurrencyId;
+    private float CurrencyFactor;
+    private String LocationId;
+    private boolean IsFromExternalSystem;
+    private String ExternalSystemId;
+    private boolean IsDeleted;
 }
