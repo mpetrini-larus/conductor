@@ -1,7 +1,7 @@
 [
   {
     "createTime": 1757668894271,
-    "updateTime": 1770071148886,
+    "updateTime": 1771517282619,
     "name": "AddBookmark",
     "description": "Add Bookmark to the current user dashboard",
     "version": 1,
@@ -60,7 +60,7 @@
   },
   {
     "createTime": 1757611329487,
-    "updateTime": 1770071148927,
+    "updateTime": 1771517282733,
     "name": "AddBookmarkPalette",
     "description": "Adds bookmark to the current user",
     "version": 5,
@@ -305,7 +305,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "bookmark": {
         "menu": "/Pizza/Marinara"
@@ -319,7 +319,7 @@
   },
   {
     "createTime": 1763394670755,
-    "updateTime": 1770071149241,
+    "updateTime": 1771517283268,
     "name": "AddItem",
     "description": "Add Item",
     "version": 1,
@@ -378,7 +378,7 @@
   },
   {
     "createTime": 1763338234581,
-    "updateTime": 1768913803369,
+    "updateTime": 1771517283249,
     "name": "AddItemPalette",
     "description": "Adds Item",
     "version": 5,
@@ -541,7 +541,7 @@
               "forkTasks": [],
               "startDelay": 0,
               "joinOn": [],
-              "optional": false,
+              "optional": true,
               "defaultExclusiveJoinTask": [],
               "asyncComplete": false,
               "loopOver": [],
@@ -781,7 +781,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "item": {}
     },
@@ -793,7 +793,7 @@
   },
   {
     "createTime": 1763394670755,
-    "updateTime": 1770071149062,
+    "updateTime": 1771517282971,
     "name": "AddSalesQuoteHeader",
     "description": "Add SalesQuote Header",
     "version": 1,
@@ -852,7 +852,7 @@
   },
   {
     "createTime": 1763338234581,
-    "updateTime": 1770071149088,
+    "updateTime": 1771517283034,
     "name": "AddSalesQuoteHeaderPalette",
     "description": "Adds SalesQuote Header",
     "version": 5,
@@ -1015,7 +1015,7 @@
               "forkTasks": [],
               "startDelay": 0,
               "joinOn": [],
-              "optional": false,
+              "optional": true,
               "defaultExclusiveJoinTask": [],
               "asyncComplete": false,
               "loopOver": [],
@@ -1255,7 +1255,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteHeader": {}
     },
@@ -1267,7 +1267,7 @@
   },
   {
     "createTime": 1763394670755,
-    "updateTime": 1770071148976,
+    "updateTime": 1771517282821,
     "name": "AddSalesQuoteLine",
     "description": "Add SalesQuote Line",
     "version": 1,
@@ -1326,7 +1326,7 @@
   },
   {
     "createTime": 1763338234581,
-    "updateTime": 1770071148988,
+    "updateTime": 1771517282846,
     "name": "AddSalesQuoteLinePalette",
     "description": "Adds SalesQuote Line",
     "version": 5,
@@ -1403,7 +1403,7 @@
         "forkTasks": [],
         "startDelay": 0,
         "joinOn": [],
-        "optional": false,
+        "optional": true,
         "defaultExclusiveJoinTask": [],
         "asyncComplete": false,
         "loopOver": [],
@@ -1572,7 +1572,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteLine": {}
     },
@@ -1584,7 +1584,7 @@
   },
   {
     "createTime": 1761496695928,
-    "updateTime": 1770071149444,
+    "updateTime": 1771517283765,
     "name": "CreateCustomer",
     "description": "Create Customer via the .NET API",
     "version": 1,
@@ -1643,7 +1643,7 @@
   },
   {
     "createTime": 1761497229239,
-    "updateTime": 1768913803375,
+    "updateTime": 1771517283836,
     "name": "CreateCustomerPalette",
     "description": "Create Customer via the .NET API",
     "version": 5,
@@ -2054,7 +2054,7 @@
   },
   {
     "createTime": 1760353440884,
-    "updateTime": 1770071148617,
+    "updateTime": 1771517281886,
     "name": "DeleteActivity",
     "description": "Delete activities in the calendar via the .NET API",
     "version": 1,
@@ -2113,7 +2113,7 @@
   },
   {
     "createTime": 1760353423955,
-    "updateTime": 1770071148874,
+    "updateTime": 1771517282596,
     "name": "DeleteActivityPalette",
     "description": "Delete activities in the calendar via the .NET API",
     "version": 5,
@@ -2366,7 +2366,7 @@
   },
   {
     "createTime": 1761512030360,
-    "updateTime": 1770071149366,
+    "updateTime": 1771517283584,
     "name": "DeleteCustomer",
     "description": "Delete Customer via the .NET API",
     "version": 1,
@@ -2425,7 +2425,7 @@
   },
   {
     "createTime": 1761512017690,
-    "updateTime": 1770071149475,
+    "updateTime": 1771517283817,
     "name": "DeleteCustomerPalette",
     "description": "Delete Customer via the .NET API",
     "version": 5,
@@ -2678,7 +2678,7 @@
   },
   {
     "createTime": 1768298259561,
-    "updateTime": 1770071149375,
+    "updateTime": 1771517283608,
     "name": "DeleteCustomersWithFilters",
     "description": "Deletey Customers With Filters via the .NET API",
     "version": 1,
@@ -2737,7 +2737,7 @@
   },
   {
     "createTime": 1768298657931,
-    "updateTime": 1770071149421,
+    "updateTime": 1771517283734,
     "name": "DeleteCustomersWithFiltersPalette",
     "description": "Delete Customers With Filters via the .NET API",
     "version": 5,
@@ -2991,7 +2991,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149252,
+    "updateTime": 1771517283283,
     "name": "DeleteItem",
     "description": "Delete Item",
     "version": 1,
@@ -3050,7 +3050,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1768913803380,
+    "updateTime": 1771517283488,
     "name": "DeleteItemPalette",
     "description": "Delete Item",
     "version": 5,
@@ -3295,7 +3295,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "item": {}
     },
@@ -3307,7 +3307,7 @@
   },
   {
     "createTime": 1768301085124,
-    "updateTime": 1770071149297,
+    "updateTime": 1771517283469,
     "name": "DeleteItemsWithFilters",
     "description": "Deletey Items With Filters via the .NET API",
     "version": 1,
@@ -3366,7 +3366,7 @@
   },
   {
     "createTime": 1768301517656,
-    "updateTime": 1770071149323,
+    "updateTime": 1771517283505,
     "name": "DeleteItemsWithFiltersPalette",
     "description": "Delete Items With Filters via the .NET API",
     "version": 5,
@@ -3620,7 +3620,7 @@
   },
   {
     "createTime": 1761656561784,
-    "updateTime": 1770071149399,
+    "updateTime": 1771517283643,
     "name": "DeleteManyCustomer",
     "description": "DeleteMany Customer via the .NET API",
     "version": 1,
@@ -3679,7 +3679,7 @@
   },
   {
     "createTime": 1761656574107,
-    "updateTime": 1770071149386,
+    "updateTime": 1771517283623,
     "name": "DeleteManyCustomerPalette",
     "description": "DeleteMany Customer via the .NET API",
     "version": 5,
@@ -3933,7 +3933,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149263,
+    "updateTime": 1771517283338,
     "name": "DeleteManyItem",
     "description": "Delete Many Item",
     "version": 1,
@@ -3991,8 +3991,8 @@
     "maskedFields": []
   },
   {
-    "createTime": 1763735672856,
-    "updateTime": 1768913803384,
+    "createTime": 1763398270770,
+    "updateTime": 1771517283448,
     "name": "DeleteManyItemPalette",
     "description": "Delete Many Item",
     "version": 5,
@@ -4238,7 +4238,7 @@
     "inputTemplate": {
       "flowName": "DeleteManyItemFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "itemIds": []
     },
@@ -4250,7 +4250,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149159,
+    "updateTime": 1771517283179,
     "name": "DeleteManySalesQuoteHeader",
     "description": "Delete many SalesQuote Header",
     "version": 5,
@@ -4309,7 +4309,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1768913803386,
+    "updateTime": 1771517283143,
     "name": "DeleteManySalesQuoteHeaderPalette",
     "description": "Delete many SalesQuoteHeader",
     "version": 5,
@@ -4555,7 +4555,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteHeaderIds": []
     },
@@ -4567,7 +4567,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149170,
+    "updateTime": 1771517283194,
     "name": "DeleteManySalesQuoteHeadersWithFilters",
     "description": "Delete many SalesQuote Headers with filters",
     "version": 1,
@@ -4626,7 +4626,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1770071149114,
+    "updateTime": 1771517283105,
     "name": "DeleteManySalesQuoteHeadersWithFiltersPalette",
     "description": "Delete many SalesQuoteHeaders with filters",
     "version": 5,
@@ -4872,7 +4872,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "request": {}
     },
@@ -4884,7 +4884,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149051,
+    "updateTime": 1771517282957,
     "name": "DeleteManySalesQuoteLine",
     "description": "Delete many SalesQuote Line",
     "version": 1,
@@ -4943,7 +4943,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1770071148939,
+    "updateTime": 1771517282766,
     "name": "DeleteManySalesQuoteLinePalette",
     "description": "Delete many SalesQuoteLine",
     "version": 5,
@@ -5189,7 +5189,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteLineIds": []
     },
@@ -5201,7 +5201,7 @@
   },
   {
     "createTime": 1769769642511,
-    "updateTime": 1770071148964,
+    "updateTime": 1771517282806,
     "name": "DeleteManySalesQuoteLinesWithFilters",
     "description": "Delete many SalesQuote Lines with filters",
     "version": 1,
@@ -5260,7 +5260,7 @@
   },
   {
     "createTime": 1769769917803,
-    "updateTime": 1770071149001,
+    "updateTime": 1771517282867,
     "name": "DeleteManySalesQuoteLinesWithFiltersPalette",
     "description": "Delete many SalesQuoteLines with filters",
     "version": 5,
@@ -5506,7 +5506,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "request": {}
     },
@@ -5518,7 +5518,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149102,
+    "updateTime": 1771517283087,
     "name": "DeleteSalesQuoteHeader",
     "description": "Delete SalesQuote Header",
     "version": 1,
@@ -5577,7 +5577,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1770071149126,
+    "updateTime": 1771517283127,
     "name": "DeleteSalesQuoteHeaderPalette",
     "description": "Delete SalesQuoteHeader",
     "version": 5,
@@ -5822,9 +5822,9 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
-      "salesQuoteHeaderId": "01a1fa20-f4de-458d-b61c-e86335782dcb"
+      "salesQuoteHeaderId": "11f91308-26c4-466e-8819-85ab4579a996"
     },
     "enforceSchema": true,
     "metadata": {
@@ -5834,7 +5834,7 @@
   },
   {
     "createTime": 1763398046818,
-    "updateTime": 1770071149013,
+    "updateTime": 1771517282888,
     "name": "DeleteSalesQuoteLine",
     "description": "Delete SalesQuote Line",
     "version": 1,
@@ -5893,7 +5893,7 @@
   },
   {
     "createTime": 1763398270770,
-    "updateTime": 1770071149038,
+    "updateTime": 1771517282938,
     "name": "DeleteSalesQuoteLinePalette",
     "description": "Delete SalesQuoteLine",
     "version": 5,
@@ -6138,9 +6138,9 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
-      "salesQuoteLineId": "01a1fa20-f4de-458d-b61c-e86335782dcb"
+      "salesQuoteLineId": "11f91308-26c4-466e-8819-85ab4579a996"
     },
     "enforceSchema": true,
     "metadata": {
@@ -6150,7 +6150,7 @@
   },
   {
     "createTime": 1761513310622,
-    "updateTime": 1770071149410,
+    "updateTime": 1771517283661,
     "name": "PromoteCustomer",
     "description": "Promote Customer via the .NET API",
     "version": 1,
@@ -6209,7 +6209,7 @@
   },
   {
     "createTime": 1761497229239,
-    "updateTime": 1768913803392,
+    "updateTime": 1771517283750,
     "name": "PromoteCustomerPalette",
     "description": "Promote Customer via the .NET API",
     "version": 5,
@@ -6619,8 +6619,472 @@
     "maskedFields": []
   },
   {
+    "createTime": 1770628933879,
+    "updateTime": 1771517283003,
+    "name": "PromoteSalesQuoteHeader",
+    "description": "Promote Sales Quote via the .NET API",
+    "version": 1,
+    "tasks": [
+      {
+        "name": "StartPromoteSqFlow",
+        "taskReferenceName": "start_promote_sq_flow_ref",
+        "inputParameters": {
+          "transactionId": "${workflow.workflowId}",
+          "flowName": "${workflow.workflowType}",
+          "userId": "${workflow.input.userId}",
+          "promote": "${workflow.input.promote}",
+          "bearer": "${workflow.input.bearer}"
+        },
+        "type": "SUB_WORKFLOW",
+        "decisionCases": {},
+        "defaultCase": [],
+        "forkTasks": [],
+        "startDelay": 0,
+        "subWorkflowParam": {
+          "name": "PromoteSqPalette"
+        },
+        "joinOn": [],
+        "optional": false,
+        "defaultExclusiveJoinTask": [],
+        "asyncComplete": false,
+        "loopOver": [],
+        "onStateChange": {},
+        "permissive": false
+      }
+    ],
+    "inputParameters": [
+      "flowName",
+      "transactionId",
+      "userId",
+      "promoteCustomer",
+      "bearer"
+    ],
+    "outputParameters": {
+      "data": "${call_remote_api.output.response.body.data}",
+      "source": "${call_remote_api.output.response.body.source}"
+    },
+    "schemaVersion": 2,
+    "restartable": true,
+    "workflowStatusListenerEnabled": false,
+    "ownerEmail": "example@email.com",
+    "timeoutPolicy": "ALERT_ONLY",
+    "timeoutSeconds": 0,
+    "variables": {},
+    "inputTemplate": {},
+    "enforceSchema": true,
+    "metadata": {
+      "type": "BUSINESS_LOGIC"
+    },
+    "maskedFields": []
+  },
+  {
+    "createTime": 1770513675790,
+    "updateTime": 1771517283069,
+    "name": "PromoteSqPalette",
+    "description": "Promote Sales Quote via the .NET API",
+    "version": 5,
+    "tasks": [
+      {
+        "name": "GetTimeStamp",
+        "taskReferenceName": "get_timestamp_0_ref",
+        "inputParameters": {
+          "evaluatorType": "javascript",
+          "expression": "(function(){ return Math.floor(Date.now() / 1000).toString(); })()"
+        },
+        "type": "INLINE",
+        "decisionCases": {},
+        "defaultCase": [],
+        "forkTasks": [],
+        "startDelay": 0,
+        "joinOn": [],
+        "optional": false,
+        "defaultExclusiveJoinTask": [],
+        "asyncComplete": false,
+        "loopOver": [],
+        "onStateChange": {},
+        "permissive": false
+      },
+      {
+        "name": "KafkaPublishWithExponentialRetry",
+        "taskReferenceName": "starting_flow_msg_ref",
+        "inputParameters": {
+          "kafka_request": {
+            "topic": "operation_status",
+            "bootStrapServers": "kafka-service:9092",
+            "key": "${workflow.input.transactionId}",
+            "value": {
+              "workflowId": "${workflow.input.transactionId}",
+              "workflowName": "${workflow.input.flowName}",
+              "currentUser": "${workflow.input.userId}",
+              "timeStamp": "${get_timestamp_0_ref.output.result}",
+              "status": "RUNNING"
+            }
+          }
+        },
+        "type": "KAFKA_PUBLISH",
+        "decisionCases": {},
+        "defaultCase": [],
+        "forkTasks": [],
+        "startDelay": 0,
+        "joinOn": [],
+        "optional": false,
+        "defaultExclusiveJoinTask": [],
+        "asyncComplete": false,
+        "loopOver": [],
+        "onStateChange": {},
+        "permissive": false
+      },
+      {
+        "name": "CallHttpWithRetry",
+        "taskReferenceName": "get_sq_ref",
+        "inputParameters": {
+          "http_request": {
+            "uri": "http://searchengine:5002/api/SearchEngine/SalesQuote/Stages",
+            "method": "GET",
+            "headers": {
+              "Authorization": "${workflow.input.bearer}",
+              "Content-Type": "application/json"
+            },
+            "connectionTimeOut": 15000,
+            "readTimeOut": 15000
+          }
+        },
+        "type": "HTTP",
+        "decisionCases": {},
+        "defaultCase": [],
+        "forkTasks": [],
+        "startDelay": 0,
+        "joinOn": [],
+        "optional": true,
+        "defaultExclusiveJoinTask": [],
+        "asyncComplete": false,
+        "loopOver": [],
+        "onStateChange": {},
+        "permissive": false
+      },
+      {
+        "name": "CheckRetriveCode",
+        "taskReferenceName": "get_check_sq_ref",
+        "inputParameters": {
+          "getNumerationCodeStatus": "${get_sq_ref.status}"
+        },
+        "type": "SWITCH",
+        "decisionCases": {
+          "COMPLETED": [
+            {
+              "name": "GetStage",
+              "taskReferenceName": "get_stage_ref",
+              "inputParameters": {
+                "evaluatorType": "javascript",
+                "expression": "(function(){ if (!$.input1) return null; for (var i = 0; i < $.input1.length; i++) { var item = $.input1[i]; if ($.input2 ? item.useAsAccepted : item.useAsRejected) { return item; } } return null; })()",
+                "input1": "${get_sq_ref.output.response.body}",
+                "input2": "${workflow.input.promote.promoteReject}"
+              },
+              "type": "INLINE",
+              "decisionCases": {},
+              "defaultCase": [],
+              "forkTasks": [],
+              "startDelay": 0,
+              "joinOn": [],
+              "optional": false,
+              "defaultExclusiveJoinTask": [],
+              "asyncComplete": false,
+              "loopOver": [],
+              "onStateChange": {},
+              "permissive": false
+            },
+            {
+              "name": "sostituisci_code",
+              "taskReferenceName": "sostituisci_code",
+              "inputParameters": {
+                "source": "${workflow.input.promote}",
+                "nuovo_valore": "${get_stage_ref.output.result.quoteStageId}",
+                "queryExpression": ".source + { promotedToStageId: .nuovo_valore }"
+              },
+              "type": "JSON_JQ_TRANSFORM",
+              "decisionCases": {},
+              "defaultCase": [],
+              "forkTasks": [],
+              "startDelay": 0,
+              "joinOn": [],
+              "optional": false,
+              "defaultExclusiveJoinTask": [],
+              "asyncComplete": false,
+              "loopOver": [],
+              "onStateChange": {},
+              "permissive": false
+            },
+            {
+              "name": "CallHttpWithRetry",
+              "taskReferenceName": "promote_sq_ref",
+              "inputParameters": {
+                "http_request": {
+                  "uri": "http://salesquotemanager:5008/api/SalesQuoteManager/SalesQuoteHeaders/Promte",
+                  "method": "PUT",
+                  "headers": {
+                    "Authorization": "${workflow.input.bearer}",
+                    "Content-Type": "application/json"
+                  },
+                  "body": "${sostituisci_code.output.result}",
+                  "connectionTimeOut": 15000,
+                  "readTimeOut": 15000
+                }
+              },
+              "type": "HTTP",
+              "decisionCases": {},
+              "defaultCase": [],
+              "forkTasks": [],
+              "startDelay": 0,
+              "joinOn": [],
+              "optional": true,
+              "defaultExclusiveJoinTask": [],
+              "asyncComplete": false,
+              "loopOver": [],
+              "onStateChange": {},
+              "permissive": false
+            },
+            {
+              "name": "GetTimeStamp",
+              "taskReferenceName": "get_timestamp_1_ref",
+              "inputParameters": {
+                "evaluatorType": "javascript",
+                "expression": "(function(){ return Math.floor(Date.now() / 1000).toString(); })()"
+              },
+              "type": "INLINE",
+              "decisionCases": {},
+              "defaultCase": [],
+              "forkTasks": [],
+              "startDelay": 0,
+              "joinOn": [],
+              "optional": false,
+              "defaultExclusiveJoinTask": [],
+              "asyncComplete": false,
+              "loopOver": [],
+              "onStateChange": {},
+              "permissive": false
+            },
+            {
+              "name": "CheckPromoteSq",
+              "taskReferenceName": "switch_sq_status_ref",
+              "inputParameters": {
+                "promoteCustomerStatus": "${promote_sq_ref.status}"
+              },
+              "type": "SWITCH",
+              "decisionCases": {
+                "COMPLETED": [
+                  {
+                    "name": "KafkaPublishWithExponentialRetry",
+                    "taskReferenceName": "promote_sq_view_ref",
+                    "inputParameters": {
+                      "kafka_request": {
+                        "topic": "sales-quote-headers-logs",
+                        "bootStrapServers": "kafka-service:9092",
+                        "key": "${workflow.input.transactionId}",
+                        "value": {
+                          "method": "POST",
+                          "userId": "${workflow.input.userId}",
+                          "ResponseBody": "${promote_sq_ref.output.response.body}"
+                        }
+                      }
+                    },
+                    "type": "KAFKA_PUBLISH",
+                    "decisionCases": {},
+                    "defaultCase": [],
+                    "forkTasks": [],
+                    "startDelay": 0,
+                    "joinOn": [],
+                    "optional": false,
+                    "defaultExclusiveJoinTask": [],
+                    "asyncComplete": false,
+                    "loopOver": [],
+                    "onStateChange": {},
+                    "permissive": false
+                  },
+                  {
+                    "name": "KafkaPublishWithExponentialRetry",
+                    "taskReferenceName": "Complete_flow_msg_ref",
+                    "inputParameters": {
+                      "kafka_request": {
+                        "topic": "operation_status",
+                        "bootStrapServers": "kafka-service:9092",
+                        "key": "${workflow.input.transactionId}",
+                        "value": {
+                          "workflowId": "${workflow.input.transactionId}",
+                          "workflowName": "${workflow.input.flowName}",
+                          "currentUser": "${workflow.input.userId}",
+                          "timeStamp": "${get_timestamp_1_ref.output.result}",
+                          "status": "COMPLETED",
+                          "outcome": {
+                            "statusCode": "${promote_sq_ref.output.response.statusCode}",
+                            "body": "${promote_sq_ref.output.response.body}",
+                            "reasonPhrase": "${promote_sq_ref.output.response.reasonPhrase}"
+                          }
+                        }
+                      }
+                    },
+                    "type": "KAFKA_PUBLISH",
+                    "decisionCases": {},
+                    "defaultCase": [],
+                    "forkTasks": [],
+                    "startDelay": 0,
+                    "joinOn": [],
+                    "optional": false,
+                    "defaultExclusiveJoinTask": [],
+                    "asyncComplete": false,
+                    "loopOver": [],
+                    "onStateChange": {},
+                    "permissive": false
+                  }
+                ]
+              },
+              "defaultCase": [
+                {
+                  "name": "KafkaPublishWithExponentialRetry",
+                  "taskReferenceName": "Fail_flow_msg_0_ref",
+                  "inputParameters": {
+                    "kafka_request": {
+                      "topic": "operation_status",
+                      "bootStrapServers": "kafka-service:9092",
+                      "key": "${workflow.input.transactionId}",
+                      "value": {
+                        "workflowId": "${workflow.input.transactionId}",
+                        "workflowName": "${workflow.input.flowName}",
+                        "currentUser": "${workflow.input.userId}",
+                        "timeStamp": "${get_timestamp_1_ref.output.result}",
+                        "status": "FAILED",
+                        "outcome": {
+                          "statusCode": "${promote_sq_ref.output.response.statusCode}",
+                          "body": "${promote_sq_ref.output.response.body}",
+                          "reasonPhrase": "${promote_sq_ref.output.response.reasonPhrase}"
+                        }
+                      }
+                    }
+                  },
+                  "type": "KAFKA_PUBLISH",
+                  "decisionCases": {},
+                  "defaultCase": [],
+                  "forkTasks": [],
+                  "startDelay": 0,
+                  "joinOn": [],
+                  "optional": false,
+                  "defaultExclusiveJoinTask": [],
+                  "asyncComplete": false,
+                  "loopOver": [],
+                  "onStateChange": {},
+                  "permissive": false
+                }
+              ],
+              "forkTasks": [],
+              "startDelay": 0,
+              "joinOn": [],
+              "optional": false,
+              "defaultExclusiveJoinTask": [],
+              "asyncComplete": false,
+              "loopOver": [],
+              "evaluatorType": "value-param",
+              "expression": "promoteCustomerStatus",
+              "onStateChange": {},
+              "permissive": false
+            }
+          ]
+        },
+        "defaultCase": [
+          {
+            "name": "GetTimeStamp",
+            "taskReferenceName": "get_timestamp_2_ref",
+            "inputParameters": {
+              "evaluatorType": "javascript",
+              "expression": "(function(){ return Math.floor(Date.now() / 1000).toString(); })()"
+            },
+            "type": "INLINE",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": [],
+            "onStateChange": {},
+            "permissive": false
+          },
+          {
+            "name": "KafkaPublishWithExponentialRetry",
+            "taskReferenceName": "Fail_flow_msg1_ref",
+            "inputParameters": {
+              "kafka_request": {
+                "topic": "operation_status",
+                "bootStrapServers": "kafka-service:9092",
+                "key": "${workflow.input.transactionId}",
+                "value": {
+                  "workflowId": "${workflow.input.transactionId}",
+                  "workflowName": "${workflow.input.flowName}",
+                  "currentUser": "${workflow.input.userId}",
+                  "timeStamp": "${get_timestamp_2_ref.output.result}",
+                  "status": "FAILED",
+                  "outcome": {
+                    "statusCode": "${get_customer_code_ref.output.response.statusCode}",
+                    "body": "${get_customer_code_ref.output.response.body}",
+                    "reasonPhrase": "${get_customer_code_ref.output.response.reasonPhrase}"
+                  }
+                }
+              }
+            },
+            "type": "KAFKA_PUBLISH",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": [],
+            "onStateChange": {},
+            "permissive": false
+          }
+        ],
+        "forkTasks": [],
+        "startDelay": 0,
+        "joinOn": [],
+        "optional": false,
+        "defaultExclusiveJoinTask": [],
+        "asyncComplete": false,
+        "loopOver": [],
+        "evaluatorType": "value-param",
+        "expression": "getNumerationCodeStatus",
+        "onStateChange": {},
+        "permissive": false
+      }
+    ],
+    "inputParameters": [
+      "promote",
+      "transactionId",
+      "flowName",
+      "bearer",
+      "userId"
+    ],
+    "outputParameters": {
+      "status": "${promote_sq_ref.output.response.body.message}"
+    },
+    "schemaVersion": 2,
+    "restartable": true,
+    "workflowStatusListenerEnabled": false,
+    "ownerEmail": "your-email@example.com",
+    "timeoutPolicy": "ALERT_ONLY",
+    "timeoutSeconds": 0,
+    "variables": {},
+    "inputTemplate": {},
+    "enforceSchema": true,
+    "metadata": {
+      "type": "PALETTE"
+    },
+    "maskedFields": []
+  },
+  {
     "createTime": 1757668976746,
-    "updateTime": 1770071148913,
+    "updateTime": 1771517282706,
     "name": "RemoveBookmark",
     "description": "Remove Bookmark to the current user dashboard",
     "version": 1,
@@ -6679,7 +7143,7 @@
   },
   {
     "createTime": 1757668427557,
-    "updateTime": 1770071148900,
+    "updateTime": 1771517282680,
     "name": "RemoveBookmarkPalette",
     "description": "Removes bookmark to the current user",
     "version": 5,
@@ -6924,7 +7388,7 @@
     "inputTemplate": {
       "flowName": "RemoveBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "bookmark": {
         "menu": "/Pizza/Marinara"
@@ -6938,7 +7402,7 @@
   },
   {
     "createTime": 1761502340043,
-    "updateTime": 1770071149464,
+    "updateTime": 1771517283797,
     "name": "UpdateCustomer",
     "description": "Update Customer via the .NET API",
     "version": 1,
@@ -6997,7 +7461,7 @@
   },
   {
     "createTime": 1761502328558,
-    "updateTime": 1770071149454,
+    "updateTime": 1771517283781,
     "name": "UpdateCustomerPalette",
     "description": "Update Customer via the .NET API",
     "version": 5,
@@ -7251,7 +7715,7 @@
   },
   {
     "createTime": 1763395436898,
-    "updateTime": 1770071149276,
+    "updateTime": 1771517283390,
     "name": "UpdateItem",
     "description": "Update Item",
     "version": 1,
@@ -7310,7 +7774,7 @@
   },
   {
     "createTime": 1763395195624,
-    "updateTime": 1768913803395,
+    "updateTime": 1771517283232,
     "name": "UpdateItemPalette",
     "description": "Update Item",
     "version": 5,
@@ -7556,7 +8020,7 @@
     "inputTemplate": {
       "flowName": "AddBookmarkFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "item": {}
     },
@@ -7568,7 +8032,7 @@
   },
   {
     "createTime": 1757668894271,
-    "updateTime": 1770071149345,
+    "updateTime": 1771517283546,
     "name": "UpdateMenuRolesPermission",
     "description": "Update role permission related to a Menu item",
     "version": 1,
@@ -7627,7 +8091,7 @@
   },
   {
     "createTime": 1758467259783,
-    "updateTime": 1770071149334,
+    "updateTime": 1771517283529,
     "name": "UpdateMenuRolesPermissionPalette",
     "description": "Update role permission related to a Menu item",
     "version": 5,
@@ -7872,7 +8336,7 @@
     "inputTemplate": {
       "flowName": "UpdateMenuRolesFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "menu": {
         "Id": "dashboardPage",
@@ -7889,7 +8353,7 @@
   },
   {
     "createTime": 1763394670755,
-    "updateTime": 1770071149148,
+    "updateTime": 1771517283166,
     "name": "UpdateSalesQuoteHeader",
     "description": "Update SalesQuote Header",
     "version": 1,
@@ -7948,7 +8412,7 @@
   },
   {
     "createTime": 1763338234581,
-    "updateTime": 1768913803397,
+    "updateTime": 1771517282989,
     "name": "UpdateSalesQuoteHeaderPalette",
     "description": "Updates SalesQuote Header",
     "version": 5,
@@ -8194,7 +8658,7 @@
     "inputTemplate": {
       "flowName": "UpdateBookmarkFlow",
       "transactionId": "",
-      "userId": "c74aa656-5e52-4c65-8fce-2f004d848f54",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteHeader": {}
     },
@@ -8206,7 +8670,7 @@
   },
   {
     "createTime": 1763394670755,
-    "updateTime": 1770071148952,
+    "updateTime": 1771517282786,
     "name": "UpdateSalesQuoteLine",
     "description": "Update SalesQuote Line",
     "version": 1,
@@ -8265,7 +8729,7 @@
   },
   {
     "createTime": 1763338234581,
-    "updateTime": 1770071149025,
+    "updateTime": 1771517282916,
     "name": "UpdateSalesQuoteLinePalette",
     "description": "Updates SalesQuote Line",
     "version": 5,
@@ -8342,7 +8806,7 @@
         "forkTasks": [],
         "startDelay": 0,
         "joinOn": [],
-        "optional": false,
+        "optional": true,
         "defaultExclusiveJoinTask": [],
         "asyncComplete": false,
         "loopOver": [],
@@ -8511,7 +8975,7 @@
     "inputTemplate": {
       "flowName": "UpdateBookmarkFlow",
       "transactionId": "",
-      "userId": "01a1fa20-f4de-458d-b61c-e86335782dcb",
+      "userId": "11f91308-26c4-466e-8819-85ab4579a996",
       "bearer": "",
       "salesQuoteLine": {}
     },
@@ -8523,7 +8987,7 @@
   },
   {
     "createTime": 1760348627035,
-    "updateTime": 1770071148835,
+    "updateTime": 1771517282472,
     "name": "UpsertActivity",
     "description": "Create/Update activities in the calendar via the .NET API",
     "version": 1,
@@ -8582,7 +9046,7 @@
   },
   {
     "createTime": 1760348575953,
-    "updateTime": 1770071148857,
+    "updateTime": 1771517282549,
     "name": "UpsertActivityPalette",
     "description": "Create/Update activities in the calendar via the .NET API",
     "version": 5,
